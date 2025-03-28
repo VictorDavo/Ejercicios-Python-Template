@@ -1,5 +1,5 @@
 # coding=utf-8
-__Author__="José Gaspar Sánchez García"
+__Author__="Víctor Davó Antón"
 
 
 # Función que determina si un numero es primo.
@@ -10,13 +10,18 @@ def esPrimo(numero) :
     if numero==1 :
         return True
 
-    # --> Implemente el código del Bucle <--
-    
-    # Si tiene solo dos divisores el número es primo     
-    if contador == 2 :
+    if numero <= 3 :
         return True
-    else :
+    
+    if numero %2 == 0 or numero %3 == 0:
         return False
+
+    i = 5
+    while i * i <= numero:
+        if numero %i == 0 or numero % (i +2) == 0:
+            return False
+        i += 6
+    return True
 
 # Programa principal
 def main():

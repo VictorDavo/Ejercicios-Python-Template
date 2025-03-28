@@ -1,6 +1,5 @@
 # coding=utf-8
-__Author__="José Gaspar Sánchez García"
-
+__Author__="Víctor Davó Antón"
 
 # Función que determina si un numero es primo.
 
@@ -17,11 +16,12 @@ def fibonacci(n) :
         # vector[0]=1
         # vector[1]=1
 
-        vector.append(1)
-        vector.append(1)
-
         # --> Implemente el código del Bucle <--
-        
+
+        x, y = 0, 1
+        for i in range(n):
+            x, y = y, x+y
+            vector.append(x)
     elif n==1 :
         vector[0]=1
 
